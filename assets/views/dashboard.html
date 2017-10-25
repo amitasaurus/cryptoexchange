@@ -1,0 +1,39 @@
+
+<md-content class="bg">
+<div>
+         <md-card layout-margin layout-padding class="md-whiteframe-6dp chart">
+            <md-card-title>
+               <md-card-title-text>
+                  <h1 class="heading card-heading">
+                    Price USD
+                  </h1>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+               <canvas id="bar" class="chart chart-bar"
+                  chart-data="data" chart-labels="labels" chart-series="series" chart-colors="colors" chart-options="options"></canvas>
+            </md-card-content>
+         </md-card>
+</div>
+<div class="detail">
+<h1 class="heading detail-heading">Details</h1>
+<div layout="row" layout-wrap layout-align="center center">
+  <md-card layout-margin layout-padding class="md-whiteframe-6dp" ng-repeat="stat in stats" class="detail-card" style="width: 350px;">
+            <md-card-title>
+               <md-card-title-text layout="row" class="coin">
+                    {{stat.id.toUpperCase()}}
+                    <span flex></span>
+                    <span>Rank : {{stat.rank}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+               <p class="price">Price USD</p>
+               <h3 class="price-value">&#x24; {{stat.price_usd}}</h3>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+          <span><md-icon class="material-icon" id="{{stat.percent_change_1h | trend}}">{{stat.percent_change_1h | trend}}</md-icon> {{stat.percent_change_1h}} %</span>
+        </md-card-actions>
+         </md-card>
+</div>
+</div>
+<md-content>
