@@ -7,7 +7,7 @@
       $stateProvider
         .state('/', {
           url: '/',
-          templateUrl: 'assets/views/dashboard.html',
+          templateUrl: 'cryptoexchange/assets/views/dashboard.html',
           controller: 'mainCtrl'
         });
 
